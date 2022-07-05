@@ -1,0 +1,55 @@
+.btn{
+    position: relative;
+    display: inline-block;
+    border:none;
+    margin: 30px;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: 500;
+
+    background-color: rgb(215, 21, 241);
+    color: rgb(237, 227, 243);
+    border-radius: 4px;
+    
+    overflow: hidden;
+    cursor: pointer;
+    
+    transition: background-color, 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn_img{
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform, 500ms cubic-bezier(0.4, 0, 0.2, 1);   
+}
+
+.btn:hover .btn_img{
+    transform: translateY(45px);
+  
+}
+
+.btn_roket{
+    position: absolute;
+    top: 25%;
+    left: 35px;
+    width: 20px;
+    height: 20px;
+    
+    fill: currentColor;
+
+    transform: translateY(calc(40% - 50px));
+
+    transition: transform, 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover .btn_roket{
+    transform: translateY(calc(40%));
+
+}
+
+.btn:hover,
+.btn:focus{
+    background-color:rgb(123, 66, 228);
+    
+}

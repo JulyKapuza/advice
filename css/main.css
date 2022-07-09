@@ -1,3 +1,4 @@
+/*  Кнопка */
 .btn{
     position: relative;
     display: inline-block;
@@ -17,19 +18,19 @@
     transition: background-color, 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn_img{
+.btn__img{
     width: 20px;
     height: 20px;
     fill: currentColor;
     transition: transform, 500ms cubic-bezier(0.4, 0, 0.2, 1);   
 }
 
-.btn:hover .btn_img{
+.btn:hover .btn__img{
     transform: translateY(45px);
   
 }
 
-.btn_roket{
+.btn__roket{
     position: absolute;
     top: 25%;
     left: 35px;
@@ -43,13 +44,279 @@
     transition: transform, 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.btn:hover .btn_roket{
+.btn:hover .btn__roket{
     transform: translateY(calc(40%));
 
 }
 
 .btn:hover,
 .btn:focus{
-    background-color:rgb(123, 66, 228);
+    background-color:rgb(123, 66, 230);
     
 }
+
+/* Стилі для форми */
+
+.title{
+    font-size: 36px;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 40px;
+    line-height: 1.1;
+    color: #ffffff;
+    
+    
+}
+
+.container{
+    background-color: rgb(68, 71, 75);
+    margin: 50px auto;
+    padding: 15px;
+    width: 600px;
+}
+/* Обгортка, щоб поставити в рядок два input */
+
+.form-wrapper{
+    display: flex;
+    align-items: center;
+    gap:30px;
+    margin-bottom: 40px;
+}
+
+.form-group {
+    position: relative;
+    flex-basis: 270px;
+}
+
+.form-group:last-child {
+    
+    flex-basis: 260px;
+}
+
+
+.form-group__input {
+    width: 100%;
+    height: 26px;
+    padding-left: 5px;
+    padding-right: 20px;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+    color: beige;
+    
+
+    outline: transparent;
+
+    transition: border-color, 600ms ;
+}
+
+/* Стилі для плейсхолдер який зявляється при активному стані */
+.form-group__input::placeholder{
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(15 / 11);
+    
+    color: rgba(157, 164, 189, 0.4);
+    opacity: 0;
+
+    transition: opacity 250 ms ease-in-out 50ms;
+    
+}
+
+.form-group__input:focus::placeholder{
+    opacity: 1;
+}
+
+.form-group__input:focus,
+.form-group__input:not(:placeholder-shown){
+    border-color: #ffffff;
+}
+
+.form-group__input:focus:invalid:not(:placeholder-shown) {
+    border-color: #f1b211;
+}
+
+.form-group__input:focus:valid:not(:placeholder-shown),
+.form-group__input:valid:not(:placeholder-shown) {
+    border-color: lightgreen;
+}
+
+.form-group__label{
+    position: absolute;
+    left:0;
+    top:50%;
+
+    transform: translateY(-50%);
+
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(15 / 12);
+    color: rgba(157, 164, 189, 0.4);
+    text-transform: uppercase;
+
+    transition: transform 250ms;
+}
+
+.form-group__input:focus + .form-group__label,
+.form-group__input:not(:placeholder-shown)+.form-group__label{
+    transform: translateY(-30px) scale(0.7);
+    transform-origin: top left;
+
+    color: beige;
+}
+
+
+.form-group-warning {
+    position: absolute;
+    bottom: -80%;
+    left:0;
+    font-size: 10px;
+    
+}
+
+.form-group__icon {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    
+     transform: translateY(-50%);
+
+}
+
+.icon-attention,
+.form-group-warning {
+    color: #f1b211;
+    fill: #f1b211 ;
+    opacity: 0;
+
+    transition: 250ms ease-in;
+
+}
+
+.icon-success {
+    fill: lightgreen;
+    opacity: 0;
+
+    transition: 250ms ease-in;
+}
+
+.form-group__input:focus:invalid ~ .form-group__icon .icon-attention,
+.form-group__input:focus:invalid ~  .form-group-warning {
+    opacity: 1;
+}
+
+.form-group__input:focus:valid ~ .form-group__icon .icon-success,
+.form-group__input:valid:not(:placeholder-shown) ~ .form-group__icon .icon-success {
+    opacity: 1;
+}
+
+/* Оформлення Textarea */
+
+.form-group__message{
+
+    resize:none;
+    width: 100%;
+    
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+    color: beige;
+    
+    
+    outline: transparent;
+    
+    transition: border-color, 600ms;
+
+    margin-bottom: 30px;
+}
+
+.form-group__message::placeholder {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: calc(15 / 11);
+
+    color: rgba(157, 164, 189, 0.4);
+    opacity: 0;
+
+    transition: opacity 250 ms ease-in-out 50ms;
+
+}
+
+.form-group__message:focus::placeholder {
+    opacity: 1;
+}
+
+.form-group__label--moved {
+    top: -500%;
+    
+
+}
+
+.form-group__message:focus + .form-group__label--moved,
+.form-group__message:not(:placeholder-shown)+.form-group__label--moved {
+    transform: translateY(-180%) scale(0.7);
+    transform-origin: top left;
+
+    color: beige;
+}
+
+.form-group-warning--moved{
+    bottom: 100%;
+}
+
+.form-group__message:focus:invalid ~ .form-group__icon .icon-attention,
+.form-group__message:focus:invalid~.form-group-warning {
+    opacity: 1;
+}
+
+.form-group__message:focus,
+.form-group__message:not(:placeholder-shown) {
+    border-color: #ffffff;
+}
+
+.form-group__message:focus:invalid:not(:placeholder-shown) {
+    border-color: #f1b211;
+}
+
+.form-group__message:focus:valid:not(:placeholder-shown),
+.form-group__message:valid:not(:placeholder-shown) {
+    border-color: lightgreen;
+}
+
+/* Стилі для кнопки форми */
+
+.form-group__btn{
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 12px 20px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+
+    color: rgba(157, 164, 189, 0.4);
+    
+    background-color: transparent;
+    border: 1px solid #f1b211;
+    border-radius: 25px;
+    cursor: pointer;
+
+    transition: color 600ms,
+    border 600ms;
+}
+
+.form-group__btn:hover,
+.form-group__btn:focus{
+
+    color:#ffffff;
+    border: 1px solid lightgreen;
+
+}
+

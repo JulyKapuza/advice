@@ -5,18 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css">
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <div class="container">
+
+  <ul>
+    <li><a href="#btn">Кнопка із зміщенням іконки</a></li>
+    <li><a href="#form">Валідна форма</a></li>
+  </ul>
+
+    <div>
+      <h1 id="btn">Кнопка із зміщенням іконки</h1>
       <button class="btn" type="button">
-        <svg class="btn_img">
-            <use href="./image/symbol-defs.svg#checkmark"></use>
+        <svg class="btn__img">
+          <use href="./image/symbol-defs.svg#checkmark"></use>
         </svg>
-        <svg class="btn_roket">
-            <use href="./image/symbol-defs.svg#rocket"></use>
+        <svg class="btn__roket">
+          <use href="./image/symbol-defs.svg#rocket"></use>
         </svg>
-        Підпишись</button>
+        Підпишись
+      </button>
     </div>
+    <!-- ФОРМА -->
+    <h1 id="form">Валідна форма</h1>
+    <div class="container">
+      <h2 class="title">Онлайн-запис</h2>
+      <form name="contact-form" autocomplete="on" novalidate>
+      <div class="form-wrapper">
+          <label class="form-group">
+          <input
+            class="form-group__input"
+            type="text"
+            name="user-name"
+            placeholder="Іванов Іван"
+            minlength="3"
+            required/>
+          <span class="form-group__label">Ім'я*</span>
+          <span class="form-group-warning">Мінімальна довжина 3 символи</span>
+          <svg class="form-group__icon" width="15px" height="15px">
+            <use class="icon-attention" href="./image/sprite.svg#notification "></use>
+            <use class="icon-success" href="./image/sprite.svg#checkmark "></use>
+          </svg>
+        </label>
+        <label class="form-group">
+          <input
+            class="form-group__input"
+            type="phone"
+            name="user-phone"
+            placeholder="+38 (099) 123-45-67"
+             required
+             id="user-phone"/>
+
+          <span class="form-group__label">Телефон*</span>
+          <span class="form-group-warning">Введіть телефон в відповідному форматі</span>
+          <svg class="form-group__icon" width="15px" height="15px">
+            <use class="icon-attention" href="./image/sprite.svg#notification "></use>
+            <use class="icon-success" href="./image/sprite.svg#checkmark "></use>
+          </svg>
+        </label>
+      </div>
+        <label class="form-group">
+          <textarea
+            class="form-group__message"
+            name="user-message"
+            rows="5"
+            placeholder="Введіть ваше повідомлення"
+            minlength="3"
+          ></textarea>
+          <span class="form-group__label form-group__label--moved ">Повідомлення</span>
+          <span class="form-group-warning form-group-warning--moved">Коментар повинен містити від 3 до 1000 символів</span
+          >
+          
+        </label>
+        <button class="form-group__btn" type="submit">Відправити</button>
+      </form>
+    </div>
+    <!-- Inputmask для введення номера -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.9/inputmask/inputmask.min.js" integrity="sha512-DVfS/GbZzLMmxBL/CW92N84eHP2Fq9d+r9RKbvctcvzISVfu+WvD+MCvbK9j8I6nVLrntGo3UUVrNFUDX0ukBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/inputmask.js"></script>
   </body>
 </html>

@@ -320,3 +320,122 @@
 
 }
 
+/* Стилі для HERO */
+
+.hero__text--wrap{
+    margin: 50px auto;
+        padding: 15px;
+        width: 600px;
+    background-color: hotpink;
+    height: 400px;
+}
+.hero__text--wrap {
+    margin-left: 152px;
+    position: relative;
+
+}
+
+.hero__text {
+    display: none;
+    font-size: 8px;
+    line-height: 1.5;
+    color: white;
+    width: 114px;
+    margin-bottom: 7px;
+}
+
+.hero__text-button {
+    display: none;
+    
+
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.hero__text-button--color__cherry {
+    color: #D41443;
+}
+
+.hero__text--wrap::before {
+    
+    content: '';
+   
+    position: absolute;
+    
+    background-repeat: no-repeat;
+    
+    width: 213px;
+    height: 216px;
+    background-image: url(/image/milk.png);
+
+    background-size: contain;
+    bottom: 36px;
+    right: 250px;
+
+    z-index: 0;
+}
+
+
+
+.button-hero {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 300px;
+    margin-left: 350px;
+}
+
+
+
+.button-hero:hover::after{
+    background-image: url(/image/pngwing.com.png);
+    content: '';
+    
+        position: absolute;
+        background-repeat: no-repeat;
+        width: 260px;
+        height: 300px;
+        background-size: contain;
+        top: 125px;
+        right: 250px;
+        z-index: 0;
+
+}
+
+/* .button-hero:hover::after{
+animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+
+@keyframes pulsate-fwd {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+} */
+
+.button-hero:hover::after{
+    animation: kenburns-top 3s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@keyframes kenburns-top {
+    0% {
+        transform: scale(1) translateY(0);
+        transform-origin: 50% 16%;
+    }
+
+    100% {
+        transform: scale(1.25) translateY(-15px);
+        transform-origin: top;
+    }
+}
